@@ -114,7 +114,7 @@ class _DetailsState extends State<Details> {
               SizedBox(
                 width: double.infinity,
                 child: Text(
-                  "Details",
+                  "Details :",
                   style: TextStyle(fontSize: 22),
                   textAlign: TextAlign.start,
                 ),
