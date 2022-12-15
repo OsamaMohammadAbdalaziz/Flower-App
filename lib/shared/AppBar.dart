@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flower_app/pages/CheckOut.dart';
 import 'package:flower_app/provider/Cart.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +10,7 @@ class ProductsAndPrice extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Cartt = Provider.of<Cart>(context);
+    final cartt = Provider.of<Cart>(context);
     return Row(
       children: [
         Stack(
@@ -16,22 +18,23 @@ class ProductsAndPrice extends StatelessWidget {
             Positioned(
               bottom: 24,
               child: Container(
-                  child: Text(
-                    "${Cartt.SelectedProducts.length}",
-                    style: TextStyle(
-                        fontSize: 16, color: Color.fromARGB(255, 13, 0, 255)),
-                  ),
                   padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
                       color: Color.fromARGB(255, 255, 255, 255),
-                      shape: BoxShape.circle)),
+                      shape: BoxShape.circle),
+                  child: Text(
+                    "${cartt.itemCount}",
+                    style: TextStyle(
+                        fontSize: 16, color: Color.fromARGB(255, 13, 0, 255)),
+                  )),
             ),
             IconButton(
               onPressed: () {
-                Navigator.push(context, 
-                MaterialPageRoute(
-                  builder: (context) =>CheckOut(),
-                ));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CheckOut(),
+                    ));
               },
               icon: Icon(Icons.add_shopping_cart),
             ),
@@ -40,7 +43,7 @@ class ProductsAndPrice extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(right: 12),
           child: Text(
-            "\$ ${Cartt.Price}",
+            "\$ ${cartt.price}",
             style: TextStyle(fontSize: 18),
           ),
         ),

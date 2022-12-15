@@ -1,21 +1,55 @@
 class Item {
-  String ImagePATH;
-  double Price;
-  String Location;
-  String Name;
+  String imagepath;
+  double price;
+  String location;
+  String name;
 
-  Item({required this.Name, required this.ImagePATH, required this.Price, required this.Location});
+  Item(
+      {required this.name,
+      required this.imagepath,
+      required this.price,
+      required this.location});
 }
 
-
-  final List<Item> items = [
-    Item(Name: "Product1", Price: 40, ImagePATH: "assets/image/1.webp", Location: "Flowery Shop"),
-    Item(Name: "Product2", Price: 40, ImagePATH: "assets/image/2.webp", Location: "Flowery Shop"),
-    Item(Name: "Product3", Price: 40, ImagePATH: "assets/image/3.webp", Location: "Flowery Shop"),
-    Item(Name: "Product4", Price: 40, ImagePATH: "assets/image/4.png", Location: "Flowery Shop"),
-    Item(Name: "Product5", Price: 40, ImagePATH: "assets/image/5.webp", Location: "Flowery Shop"),
-    Item(Name: "Product6", Price: 40, ImagePATH: "assets/image/6.jpg", Location: "Flowery Shop"),
-    Item(Name: "Product7", Price: 40, ImagePATH: "assets/image/7.jpg", Location: "Flowery Shop"),
-    Item(Name: "Product8", Price: 40, ImagePATH: "assets/image/8.webp", Location: "Flowery Shop"),
-  ];
-  
+final List<Item> items = [
+  Item(
+      name: "Product1",
+      price: 40,
+      imagepath: "assets/image/1.webp",
+      location: "Flowery Shop"),
+  Item(
+      name: "Product2",
+      price: 40,
+      imagepath: "assets/image/2.webp",
+      location: "Flowery Shop"),
+  Item(
+      name: "Product3",
+      price: 40,
+      imagepath: "assets/image/3.webp",
+      location: "Flowery Shop"),
+  Item(
+      name: "Product4",
+      price: 40,
+      imagepath: "assets/image/4.png",
+      location: "Flowery Shop"),
+  Item(
+      name: "Product5",
+      price: 40,
+      imagepath: "assets/image/5.webp",
+      location: "Flowery Shop"),
+  Item(
+      name: "Product6",
+      price: 40,
+      imagepath: "assets/image/6.jpg",
+      location: "Flowery Shop"),
+  Item(
+      name: "Product7",
+      price: 40,
+      imagepath: "assets/image/7.jpg",
+      location: "Flowery Shop"),
+  Item(
+      name: "Product8",
+      price: 40,
+      imagepath: "assets/image/8.webp",
+      location: "Flowery Shop"),
+];

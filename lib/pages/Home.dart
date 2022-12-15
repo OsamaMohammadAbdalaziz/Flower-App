@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
 import 'package:flower_app/model/Item.dart';
+import 'package:flower_app/pages/CheckOut.dart';
 import 'package:flower_app/pages/Product_details.dart';
 import 'package:flower_app/provider/Cart.dart';
 import 'package:flower_app/shared/AppBar.dart';
@@ -13,7 +14,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Cartt = Provider.of<Cart>(context);
+    final cartt = Provider.of<Cart>(context);
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -47,7 +48,7 @@ class Home extends StatelessWidget {
                         left: 0,
                         child: ClipRRect(
                             borderRadius: BorderRadius.circular(55),
-                            child: Image.asset(items[index].ImagePATH)),
+                            child: Image.asset(items[index].imagepath)),
                       ),
                     ]),
                     footer: GridTileBar(
@@ -55,7 +56,7 @@ class Home extends StatelessWidget {
                       trailing: IconButton(
                           color: Color.fromARGB(255, 62, 94, 70),
                           onPressed: () {
-                            Cartt.add(items[index]);
+                            cartt.add(items[index]);
                           },
                           icon: Icon(Icons.add)),
 
@@ -97,26 +98,25 @@ class Home extends StatelessWidget {
                   ListTile(
                     title: Text("Home"),
                     leading: Icon(Icons.home),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Home()));
+                    },
                   ),
                   ListTile(
                     title: Text("My Products"),
                     leading: Icon(Icons.add_shopping_cart),
-                    onTap: () {},
-                  ),
-                  ListTile(
-                    title: Text("Settings"),
-                    leading: Icon(Icons.settings),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CheckOut(),
+                          ));
+                    },
                   ),
                   ListTile(
                     title: Text("Help"),
                     leading: Icon(Icons.help_center),
-                    onTap: () {},
-                  ),
-                  ListTile(
-                    title: Text("Information"),
-                    leading: Icon(Icons.perm_device_information),
                     onTap: () {},
                   ),
                   ListTile(

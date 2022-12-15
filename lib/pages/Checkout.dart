@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flower_app/model/Item.dart';
 import 'package:flower_app/provider/Cart.dart';
@@ -12,7 +12,7 @@ class CheckOut extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Cartt = Provider.of<Cart>(context);
+    final cartt = Provider.of<Cart>(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: appbarBlue,
@@ -26,20 +26,20 @@ class CheckOut extends StatelessWidget {
               height: 550,
               child: ListView.builder(
                   padding: const EdgeInsets.all(8),
-                  itemCount: Cartt.SelectedProducts.length,
+                  itemCount: cartt.itemCount,
                   itemBuilder: (BuildContext context, int index) {
                     return Card(
                       child: ListTile(
-                        title: Text(Cartt.SelectedProducts[index].Name),
+                        title: Text(cartt.SelectedProducts[index].name),
                         subtitle: Text(
-                            "${Cartt.SelectedProducts[index].Price} - ${Cartt.SelectedProducts[index].Location}"),
+                            "${cartt.SelectedProducts[index].price} - ${cartt.SelectedProducts[index].location}"),
                         leading: CircleAvatar(
                           backgroundImage: AssetImage(
-                              Cartt.SelectedProducts[index].ImagePATH),
+                              cartt.SelectedProducts[index].imagepath),
                         ),
                         trailing: IconButton(
                             onPressed: () {
-                              Cartt.delete(Cartt.SelectedProducts[index]);
+                              cartt.delete(cartt.SelectedProducts[index]);
                             },
                             icon: Icon(Icons.remove)),
                       ),
@@ -49,15 +49,15 @@ class CheckOut extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {},
-            child: Text(
-              "Pay \$${Cartt.Price}",
-              style: TextStyle(fontSize: 19),
-            ),
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(BTNred),
                 padding: MaterialStateProperty.all(EdgeInsets.all(12)),
                 shape: MaterialStateProperty.all(RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8)))),
+            child: Text(
+              "Pay \$${cartt.price}",
+              style: TextStyle(fontSize: 19),
+            ),
           ),
         ],
       ),

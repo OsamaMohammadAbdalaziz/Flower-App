@@ -3,17 +3,21 @@ import 'package:flutter/material.dart';
 
 class Cart with ChangeNotifier {
   List SelectedProducts = [];
-  int Price = 0;
+  int price = 0;
 
   add(Item product) {
     SelectedProducts.add(product);
-    Price += product.Price.round();
+    price += product.price.round();
     notifyListeners();
   }
 
   delete(Item product) {
     SelectedProducts.remove(product);
-    Price -= product.Price.round();
+    price -= product.price.round();
     notifyListeners();
+  }
+
+  get itemCount {
+    return SelectedProducts.length;
   }
 }

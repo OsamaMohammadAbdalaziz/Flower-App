@@ -29,12 +29,12 @@ class _DetailsState extends State<Details> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              Image.asset(widget.Product.ImagePATH),
+              Image.asset(widget.Product.imagepath),
               SizedBox(
                 height: 11,
               ),
               Text(
-                "\$ ${widget.Product.Price}",
+                "\$ ${widget.Product.price}",
                 style: TextStyle(fontSize: 20),
               ),
               SizedBox(
@@ -101,7 +101,7 @@ class _DetailsState extends State<Details> {
                         width: 3,
                       ),
                       Text(
-                        widget.Product.Location,
+                        widget.Product.location,
                         style: TextStyle(fontSize: 19),
                       ),
                     ],
