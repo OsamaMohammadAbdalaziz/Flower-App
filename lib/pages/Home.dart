@@ -12,6 +12,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Cartt = Provider.of<Cart>(context);
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -50,15 +51,13 @@ class Home extends StatelessWidget {
                     ]),
                     footer: GridTileBar(
                       // backgroundColor: Color.fromARGB(66, 73, 127, 110),
-                      trailing:
-                          Consumer<Cart>(builder: ((context, Cart, child) {
-                        return IconButton(
-                            color: Color.fromARGB(255, 62, 94, 70),
-                            onPressed: () {
-                              Cart.add(items[index]);
-                            },
-                            icon: Icon(Icons.add));
-                      })),
+                      trailing: IconButton(
+                          color: Color.fromARGB(255, 62, 94, 70),
+                          onPressed: () {
+                            Cartt.add(items[index]);
+                          },
+                          icon: Icon(Icons.add)),
+
                       leading: Text("\$40"),
                       title: Text(
                         "",
@@ -137,41 +136,39 @@ class Home extends StatelessWidget {
         ),
         appBar: AppBar(
           actions: [
-            Consumer<Cart>(builder: ((context, classInstance, child) {
-              return Row(
-                children: [
-                  Stack(
-                    children: [
-                      Positioned(
-                        bottom: 24,
-                        child: Container(
-                            child: Text(
-                              "${classInstance.SelectedProducts.length}",
-                              style: TextStyle(
-                                  fontSize: 16,
-                                  color: Color.fromARGB(255, 13, 0, 255)),
-                            ),
-                            padding: EdgeInsets.all(5),
-                            decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 255, 255, 255),
-                                shape: BoxShape.circle)),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.add_shopping_cart),
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 12),
-                    child: Text(
-                      "\$ ${classInstance.Price}",
-                      style: TextStyle(fontSize: 18),
+            Row(
+              children: [
+                Stack(
+                  children: [
+                    Positioned(
+                      bottom: 24,
+                      child: Container(
+                          child: Text(
+                            "${Cartt.SelectedProducts.length}",
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Color.fromARGB(255, 13, 0, 255)),
+                          ),
+                          padding: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 255, 255, 255),
+                              shape: BoxShape.circle)),
                     ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(Icons.add_shopping_cart),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 12),
+                  child: Text(
+                    "\$ ${Cartt.Price}",
+                    style: TextStyle(fontSize: 18),
                   ),
-                ],
-              );
-            })),
+                ),
+              ],
+            )
           ],
           backgroundColor: appbarBlue,
           title: Text("Home"),
