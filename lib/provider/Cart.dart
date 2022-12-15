@@ -10,4 +10,10 @@ class Cart with ChangeNotifier {
     Price += product.Price.round();
     notifyListeners();
   }
+
+  delete(Item product) {
+    SelectedProducts.remove(product);
+    Price -= product.Price.round();
+    notifyListeners();
+  }
 }

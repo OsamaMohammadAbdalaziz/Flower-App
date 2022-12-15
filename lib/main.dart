@@ -1,5 +1,6 @@
 
 
+import 'package:flower_app/pages/CheckOut.dart';
 import 'package:flower_app/pages/Home.dart';
 import 'package:flower_app/pages/Login.dart';
 import 'package:flower_app/pages/Product_details.dart';

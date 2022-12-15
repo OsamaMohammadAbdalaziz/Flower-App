@@ -1,12 +1,13 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last, must_be_immutable, non_constant_identifier_names
 
 import 'package:flower_app/model/Item.dart';
+import 'package:flower_app/shared/AppBar.dart';
 import 'package:flower_app/shared/colors.dart';
 import 'package:flutter/material.dart';
 
 class Details extends StatefulWidget {
   Item Product;
-  Details({required this.Product}); 
+  Details({required this.Product});
 
   @override
   State<Details> createState() => _DetailsState();
@@ -21,41 +22,7 @@ class _DetailsState extends State<Details> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          actions: [
-            Row(
-              children: [
-                Stack(
-                  children: [
-                    Positioned(
-                      bottom: 24,
-                      child: Container(
-                          child: Text(
-                            "8",
-                            style: TextStyle(
-                                fontSize: 16,
-                                color: Color.fromARGB(255, 13, 0, 255)),
-                          ),
-                          padding: EdgeInsets.all(5),
-                          decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 255, 255, 255),
-                              shape: BoxShape.circle)),
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.add_shopping_cart),
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 12),
-                  child: Text(
-                    "\$ 200",
-                    style: TextStyle(fontSize: 18),
-                  ),
-                ),
-              ],
-            ),
-          ],
+          actions: [ProductsAndPrice()],
           backgroundColor: appbarBlue,
           title: Text("Product details"),
         ),
