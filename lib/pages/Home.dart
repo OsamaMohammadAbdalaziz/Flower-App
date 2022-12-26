@@ -2,6 +2,7 @@
 
 import 'package:flower_app/model/Item.dart';
 import 'package:flower_app/pages/CheckOut.dart';
+import 'package:flower_app/pages/Login.dart';
 import 'package:flower_app/pages/Product_details.dart';
 import 'package:flower_app/provider/Cart.dart';
 import 'package:flower_app/shared/AppBar.dart';
@@ -122,7 +123,13 @@ class Home extends StatelessWidget {
                   ListTile(
                     title: Text("Logout"),
                     leading: Icon(Icons.exit_to_app),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: ((context) => const Login()),
+                            ));
+                    },
                   ),
                 ],
               ),

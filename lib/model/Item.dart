@@ -52,4 +52,14 @@ final List<Item> items = [
       price: 40,
       imagepath: "assets/image/8.webp",
       location: "Flowery Shop"),
+  Item(
+      name: "Product9",
+      imagepath: "assets/image/9.webp",
+      price: 40,
+      location: "Flowery Shop"),
+  Item(
+      name: "Product10",
+      imagepath: "assets/image/10.jpg",
+      price: 40,
+      location: "Flowery Shop"),
 ];
