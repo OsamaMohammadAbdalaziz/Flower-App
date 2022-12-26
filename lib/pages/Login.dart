@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last
 
+import 'package:flower_app/pages/Home.dart';
 import 'package:flower_app/pages/register.dart';
 import 'package:flower_app/shared/colors.dart';
 import 'package:flower_app/shared/constants.dart';
@@ -41,7 +42,13 @@ class Login extends StatelessWidget {
                   height: 33,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: ((context) => const Home()),
+                            ));
+                  },
                   child: Text(
                     "Sign in",
                     style: TextStyle(fontSize: 19),
