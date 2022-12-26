@@ -44,10 +44,10 @@ class Login extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () {
                     Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: ((context) => const Home()),
-                            ));
+                        context,
+                        MaterialPageRoute(
+                          builder: ((context) => const Home()),
+                        ));
                   },
                   child: Text(
                     "Sign in",
