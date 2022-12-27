@@ -126,6 +126,11 @@ class Home extends StatelessWidget {
                     onTap: () {},
                   ),
                   ListTile(
+                    title: Text("Information"),
+                    leading: Icon(Icons.perm_device_information),
+                    onTap: () {},
+                  ),
+                  ListTile(
                     title: Text("Logout"),
                     leading: Icon(Icons.exit_to_app),
                     onTap: () {
