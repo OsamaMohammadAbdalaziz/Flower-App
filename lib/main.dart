@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: unused_import
 
 import 'package:flower_app/pages/CheckOut.dart';
 import 'package:flower_app/pages/Home.dart';
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       create: (context) {
         return Cart();
       },
-      child: MaterialApp(
+      child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Home(),
       ),

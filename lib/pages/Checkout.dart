@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_import, file_names
 
 import 'package:flower_app/model/Item.dart';
 import 'package:flower_app/provider/Cart.dart';

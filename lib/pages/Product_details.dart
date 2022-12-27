@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last, must_be_immutable, non_constant_identifier_names
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last, must_be_immutable, non_constant_identifier_names, file_names
 
 import 'package:flower_app/model/Item.dart';
 import 'package:flower_app/shared/AppBar.dart';
@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 
 class Details extends StatefulWidget {
   Item Product;
-  Details({required this.Product});
+  Details({Key? key, required this.Product}) : super(key: key);
 
   @override
   State<Details> createState() => _DetailsState();
