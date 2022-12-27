@@ -1,6 +1,6 @@
 class Item {
   String imagepath;
-  double price;
+  int price;
   String location;
   String name;
 
