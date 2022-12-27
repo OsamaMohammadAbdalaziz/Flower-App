@@ -116,6 +116,11 @@ class Home extends StatelessWidget {
                     },
                   ),
                   ListTile(
+                    title: Text("Setting"),
+                    leading: Icon(Icons.settings),
+                    onTap: () {},
+                  ),
+                  ListTile(
                     title: Text("Help"),
                     leading: Icon(Icons.help_center),
                     onTap: () {},
@@ -125,10 +130,10 @@ class Home extends StatelessWidget {
                     leading: Icon(Icons.exit_to_app),
                     onTap: () {
                       Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: ((context) => const Login()),
-                            ));
+                          context,
+                          MaterialPageRoute(
+                            builder: ((context) => const Login()),
+                          ));
                     },
                   ),
                 ],
