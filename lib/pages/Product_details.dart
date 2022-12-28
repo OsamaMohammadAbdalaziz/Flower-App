@@ -38,7 +38,7 @@ class _DetailsState extends State<Details> {
                 style: TextStyle(fontSize: 20),
               ),
               Text(
-                "\$ ${widget.Product.price}",
+                "\$${widget.Product.price.round()}",
                 style: TextStyle(fontSize: 20),
               ),
               SizedBox(
