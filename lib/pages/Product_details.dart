@@ -34,6 +34,10 @@ class _DetailsState extends State<Details> {
                 height: 11,
               ),
               Text(
+                widget.Product.name,
+                style: TextStyle(fontSize: 20),
+              ),
+              Text(
                 "\$ ${widget.Product.price}",
                 style: TextStyle(fontSize: 20),
               ),
